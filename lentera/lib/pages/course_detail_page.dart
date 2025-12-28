@@ -4,7 +4,8 @@ import '../models/quiz_model.dart';
 import '../theme/colors.dart';
 import 'quiz_detail_page.dart';
 import 'assignment_detail_page.dart';
-import 'material_detail_page.dart'; // Add this import
+import 'material_detail_page.dart';
+import 'concept_uid_page.dart';
 
 class CourseDetailPage extends StatefulWidget {
   final Course course;
@@ -140,6 +141,11 @@ class _CourseDetailPageState extends State<CourseDetailPage> with SingleTickerPr
                Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const MaterialDetailPage()),
+              );
+            } else if (index == 1) {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ConceptUIDPage()),
               );
             }
           },
