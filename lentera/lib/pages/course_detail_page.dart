@@ -4,6 +4,7 @@ import '../models/quiz_model.dart';
 import '../theme/colors.dart';
 import 'quiz_detail_page.dart';
 import 'assignment_detail_page.dart';
+import 'material_detail_page.dart'; // Add this import
 
 class CourseDetailPage extends StatefulWidget {
   final Course course;
@@ -132,47 +133,58 @@ class _CourseDetailPageState extends State<CourseDetailPage> with SingleTickerPr
       itemCount: materiList.length,
       itemBuilder: (context, index) {
         final item = materiList[index];
-        return Card(
-          margin: const EdgeInsets.only(bottom: 16),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          elevation: 0,
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF64B5F6), // Light Blue
-                        borderRadius: BorderRadius.circular(4), // Rounded corners for label
+        return InkWell(
+          onTap: () {
+            // For demo, only the first item navigates to the detail page
+            if (index == 0) {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MaterialDetailPage()),
+              );
+            }
+          },
+          child: Card(
+            margin: const EdgeInsets.only(bottom: 16),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            elevation: 0,
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF64B5F6), // Light Blue
+                          borderRadius: BorderRadius.circular(4), // Rounded corners for label
+                        ),
+                        child: Text(
+                          item['label'],
+                          style: const TextStyle(color: Colors.white, fontSize: 12),
+                        ),
                       ),
-                      child: Text(
-                        item['label'],
-                        style: const TextStyle(color: Colors.white, fontSize: 12),
+                      Icon(
+                        Icons.check_circle,
+                        color: item['done'] ? Colors.green : Colors.grey[300],
                       ),
-                    ),
-                    Icon(
-                      Icons.check_circle,
-                      color: item['done'] ? Colors.green : Colors.grey[300],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  item['title'],
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  item['info'],
-                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                ),
-              ],
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    item['title'],
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    item['info'],
+                    style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                  ),
+                ],
+              ),
             ),
           ),
         );
