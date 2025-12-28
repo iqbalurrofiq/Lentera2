@@ -4,6 +4,7 @@ import '../theme/colors.dart';
 import '../widgets/course_card.dart';
 import 'course_detail_page.dart';
 import 'course_page.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     final List<Widget> pages = [
       _buildDashboard(context),
       const CoursePage(),
-      const Center(child: Text('Profile Page Placeholder')),
+      const ProfilePage(),
     ];
 
     return Scaffold(
