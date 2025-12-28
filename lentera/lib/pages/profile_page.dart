@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                          ),
                          child: const CircleAvatar(
                            radius: 40,
-                           backgroundImage: NetworkImage('https://i.pravatar.cc/150?img=11'), // Dummy image
+                           backgroundImage: AssetImage('assets/images/profile.png'),
                          ),
                        ),
                        const SizedBox(height: 16),
@@ -100,7 +100,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                        ),
                        boxShadow: [
                          BoxShadow(
-                           color: Colors.black.withOpacity(0.1),
+                            color: Colors.black.withValues(alpha: 0.1),
                            blurRadius: 10,
                            offset: const Offset(0, -5),
                          ),
@@ -116,7 +116,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                              borderRadius: BorderRadius.circular(16),
                              boxShadow: [
                                BoxShadow(
-                                 color: Colors.grey.withOpacity(0.2),
+                                 color: Colors.grey.withValues(alpha: 0.2),
                                  blurRadius: 5,
                                  offset: const Offset(0, 2),
                                ),
@@ -200,7 +200,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                icon: const Icon(Icons.logout, size: 16),
               label: const Text('Log Out'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFB71C1C),
+                backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -324,8 +324,8 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                icon: const Icon(Icons.logout, size: 16),
               label: const Text('Log Out'),
               style: OutlinedButton.styleFrom(
-                foregroundColor: const Color(0xFFB71C1C),
-                side: const BorderSide(color: Color(0xFFB71C1C)),
+                foregroundColor: Colors.red,
+                side: const BorderSide(color: Colors.red),
               ),
             ),
           ),

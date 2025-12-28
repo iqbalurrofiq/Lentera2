@@ -131,8 +131,19 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(12),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [AppColors.primary, AppColors.primary.withValues(alpha: 0.8)],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withValues(alpha: 0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,16 +202,23 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: Colors.blue[100]!),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withValues(alpha: 0.1),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.campaign, size: 40, color: Colors.blue),
+                    Icon(Icons.campaign_outlined, size: 48, color: Colors.blue),
                     SizedBox(height: 8),
-                    Text('Info Maintenance Server'),
+                    Text('Info Maintenance Server', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.blue)),
                   ],
                 ),
               ),

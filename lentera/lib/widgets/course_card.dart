@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/course_model.dart';
+import '../theme/colors.dart';
 
 class CourseCard extends StatelessWidget {
   final Course course;
@@ -65,7 +66,7 @@ class CourseCard extends StatelessWidget {
                 LinearProgressIndicator(
                   value: course.progress,
                   backgroundColor: Colors.grey[300],
-                  valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFB71C1C)), // Dark Red
+                  valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary),
                   minHeight: 8,
                   borderRadius: BorderRadius.circular(4),
                 ),
@@ -139,7 +140,7 @@ class CourseCard extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: const Text(
                     'PENDIDIKAN\nKEWARGANEGARAAN',
@@ -201,7 +202,7 @@ class CourseCard extends StatelessWidget {
               end: Alignment.bottomRight,
               colors: [
                 course.color,
-                course.color.withOpacity(0.7),
+                course.color.withValues(alpha: 0.7),
               ],
             ),
           ),
