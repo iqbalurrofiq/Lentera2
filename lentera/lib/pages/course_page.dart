@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/course_model.dart';
-import '../theme/colors.dart';
+import '../widgets/course_card.dart'; // Import CourseCard
 import 'course_detail_page.dart';
 
 class CoursePage extends StatelessWidget {
@@ -22,10 +22,9 @@ class CoursePage extends StatelessWidget {
         foregroundColor: Colors.black,
         elevation: 0,
       ),
-      body: ListView.separated(
+      body: ListView.builder( // Changed from ListView.separated as CourseCard handles bottom margin
         padding: const EdgeInsets.all(20),
         itemCount: courses.length,
-        separatorBuilder: (context, index) => const SizedBox(height: 16),
         itemBuilder: (context, index) {
           final course = courses[index];
           return InkWell(
@@ -37,51 +36,7 @@ class CoursePage extends StatelessWidget {
                 ),
               );
             },
-            child: Row(
-              children: [
-                // Rounded Rectangle Icon
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: course.color.withOpacity(0.5), // Lighter shade
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                ),
-                const SizedBox(width: 16),
-                // Text Info
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        course.title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        '${course.code} | [Dummy Schedule]',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 12,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                       Text(
-                        'Tanggal Mulai: Monday, 8 February 2021',
-                        style: TextStyle(
-                          color: Colors.grey[500],
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            child: CourseCard(course: course), // Use CourseCard
           );
         },
       ),
