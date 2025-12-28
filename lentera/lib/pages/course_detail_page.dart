@@ -3,6 +3,7 @@ import '../models/course_model.dart';
 import '../models/quiz_model.dart';
 import '../theme/colors.dart';
 import 'quiz_detail_page.dart';
+import 'assignment_detail_page.dart';
 
 class CourseDetailPage extends StatefulWidget {
   final Course course;
@@ -211,14 +212,22 @@ class _CourseDetailPageState extends State<CourseDetailPage> with SingleTickerPr
       itemBuilder: (context, index) {
         final item = tugasList[index];
         return InkWell(
-          onTap: item['type'] == 'quiz' ? () {
-             Navigator.push(
+          onTap: () {
+            if (item['type'] == 'quiz') {
+               Navigator.push(
                context,
                MaterialPageRoute(
                  builder: (context) => QuizDetailPage(quiz: Quiz.dummyQuiz),
                ),
              );
-          } : null,
+            } else if (item['type'] == 'tugas') {
+               Navigator.push(
+               context,
+               MaterialPageRoute(
+                 builder: (context) => const AssignmentDetailPage()),
+               );
+            }
+          },
           child: Card(
             margin: const EdgeInsets.only(bottom: 16),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

@@ -4,6 +4,7 @@ import '../theme/colors.dart';
 import '../widgets/course_card.dart';
 import 'course_detail_page.dart';
 import 'course_page.dart';
+import 'assignment_detail_page.dart';
 import 'profile_page.dart';
 import 'notification_page.dart';
 
@@ -117,39 +118,48 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
           const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+          const SizedBox(height: 12),
+          InkWell(
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AssignmentDetailPage()),
+              );
+            },
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
                   ),
-                ),
-                SizedBox(height: 8),
-                Text(
-                  'Tugas 01 - UX Analysis Mobile Game',
-                  style: TextStyle(color: Colors.white70, fontSize: 12),
-                ),
-                SizedBox(height: 16),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text(
-                    'Waktu Pengumpulan\nJumat 20 Februari 23:59 WIB',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  SizedBox(height: 8),
+                  Text(
+                    'Tugas 01 - UX Analysis Mobile Game',
+                    style: TextStyle(color: Colors.white70, fontSize: 12),
                   ),
-                ),
-              ],
+                  SizedBox(height: 16),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Text(
+                      'Waktu Pengumpulan\nJumat 20 Februari 23:59 WIB',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(color: Colors.white, fontSize: 12),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 24),
