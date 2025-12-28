@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
+import 'pages/splash_page.dart';
 import 'theme/colors.dart';
 
 void main() {
@@ -37,7 +38,8 @@ class LenteraApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
+        '/': (context) => const SplashPage(),
+        '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
       },
       debugShowCheckedModeBanner: false,
