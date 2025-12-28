@@ -118,7 +118,16 @@ class AssignmentDetailPage extends StatelessWidget {
             // Edit/Submit Button
             Center(
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                    ),
+                    builder: (context) => _buildUploadBottomSheet(context),
+                  );
+                },
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                   side: BorderSide(color: Colors.grey[300]!),
@@ -135,6 +144,118 @@ class AssignmentDetailPage extends StatelessWidget {
             const SizedBox(height: 20),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildUploadBottomSheet(BuildContext context) {
+    return Container(
+      height: 600, // Fixed height or dynamic
+      padding: const EdgeInsets.all(0),
+      child: Column(
+        children: [
+          // Header
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            decoration: const BoxDecoration(
+              color: Color(0xFFB71C1C), // Maroon
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            width: double.infinity,
+            alignment: Alignment.center,
+            child: const Text(
+              'Upload File',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          ),
+          
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                   const Text(
+                    'Maksimum File 5MB , Maksimum Jumlah File 20',
+                    style: TextStyle(fontSize: 12, color: Colors.black54),
+                  ),
+                  const SizedBox(height: 24),
+                  
+                  // Dashed Container Area
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, style: BorderStyle.solid), // Dashed border needs CustomPainter, simulated with grey solid for now
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: CustomPaint( // Simple overlay for 'dashed' look or just use existing packages? 
+                    // Let's simpler, just a container with Border for now as per instructions "UI Only".
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.cloud_upload_outlined, size: 80, color: Colors.blue),
+                          SizedBox(height: 16),
+                          Text(
+                            'File yang akan di upload akan tampil di sini', // "tampil di sini" - screenshot slightly blurry
+                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const Spacer(),
+
+                  // Buttons
+                  Column(
+                    children: [
+                       SizedBox(
+                        width: 200,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.grey[200],
+                            foregroundColor: Colors.black,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                          ),
+                          child: const Text('Pilih File'),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      SizedBox(
+                        width: 200,
+                        child: ElevatedButton(
+                          onPressed: () {
+                             Navigator.pop(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.grey[100],
+                            foregroundColor: Colors.black,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                          ),
+                          child: const Text('Simpan'),
+                        ),
+                      ),
+                    ],
+                  ),
+                   const SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
