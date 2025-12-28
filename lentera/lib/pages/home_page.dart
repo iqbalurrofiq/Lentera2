@@ -5,6 +5,7 @@ import '../widgets/course_card.dart';
 import 'course_detail_page.dart';
 import 'course_page.dart';
 import 'profile_page.dart';
+import 'notification_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     final List<Widget> pages = [
       _buildDashboard(context),
       const CoursePage(),
-      const ProfilePage(),
+      const NotificationPage(),
     ];
 
     return Scaffold(
@@ -38,43 +39,45 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: AppColors.primary,
               elevation: 0,
               toolbarHeight: 80,
-              title: Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.person, color: AppColors.primary),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Halo,',
-                          style: TextStyle(fontSize: 14, color: Colors.white70),
-                        ),
-                        Text(
-                          'DANDY CANDRA PRATAMA', // Dummy Name
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
+              title: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  );
+                },
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, color: AppColors.primary),
                     ),
-                  ),
-                ],
-              ),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.notifications_outlined, color: Colors.white),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Halo,',
+                            style: TextStyle(fontSize: 14, color: Colors.white70),
+                          ),
+                          Text(
+                            'DANDY CANDRA PRATAMA',
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             )
-          : null, // Let sub-pages handle AppBar if needed (CoursePage has one)
+          : null,
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -87,8 +90,8 @@ class _HomePageState extends State<HomePage> {
             label: 'Course',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.notifications),
+            label: 'Notifikasi',
           ),
         ],
         currentIndex: _selectedIndex,

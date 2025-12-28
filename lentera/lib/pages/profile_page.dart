@@ -38,8 +38,19 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
             decoration: const BoxDecoration(
               color: AppColors.primary,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(0), // Screenshot looks simpler, but let's stick to simple flat or slight curve? The design shows just a block.
-                // Wait, the screenshot shows a red header, and the white part containing tabs overlaps it.
+                bottomLeft: Radius.circular(0),
+              ),
+            ),
+          ),
+          
+          // Back Button
+          Positioned(
+            top: 0,
+            left: 0,
+            child: SafeArea(
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ),
