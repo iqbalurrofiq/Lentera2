@@ -147,7 +147,17 @@ class LoginPage extends StatelessWidget {
 
                     // Help Text
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          backgroundColor: Colors.white,
+                          builder: (context) => const _HelpModalContent(),
+                        );
+                      },
                       child: const Text(
                         'Bantuan ?',
                         style: TextStyle(color: AppColors.primary),
@@ -161,6 +171,141 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _HelpModalContent extends StatefulWidget {
+  const _HelpModalContent({super.key});
+
+  @override
+  State<_HelpModalContent> createState() => _HelpModalContentState();
+}
+
+class _HelpModalContentState extends State<_HelpModalContent> {
+  bool isEnglish = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return DraggableScrollableSheet(
+      initialChildSize: 0.75,
+      minChildSize: 0.5,
+      maxChildSize: 0.9,
+      expand: false,
+      builder: (context, scrollController) {
+        return SingleChildScrollView(
+          controller: scrollController,
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Handle bar
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+
+              // Language Toggle
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () => setState(() => isEnglish = false),
+                    child: Column(
+                      children: [
+                         Container(
+                          height: 20, width: 30, color: Colors.transparent, 
+                          child: const Center(child: Text("🇮🇩", style: TextStyle(fontSize: 20))), 
+                        ),
+                        const SizedBox(height: 4),
+                        Text('ID',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                color: !isEnglish ? Colors.black : Colors.grey)),
+                        if (!isEnglish)
+                          Container(height: 2, width: 20, color: AppColors.primary),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 32),
+                  GestureDetector(
+                    onTap: () => setState(() => isEnglish = true),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 20, width: 30, color: Colors.transparent, 
+                          child: const Center(child: Text("🇬🇧", style: TextStyle(fontSize: 20))), 
+                        ),
+                        const SizedBox(height: 4),
+                        Text('EN',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                color: isEnglish ? Colors.black : Colors.grey)),
+                         if (isEnglish)
+                          Container(height: 2, width: 20, color: AppColors.primary),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 24),
+
+              // Content
+              Text(
+                isEnglish
+                    ? 'Access only for Lecturers and Students of Telkom University.'
+                    : 'Akses hanya untuk Dosen dan Mahasiswa Telkom University.',
+                style: const TextStyle(fontSize: 13, height: 1.5),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                isEnglish
+                    ? 'Login using Microsoft Office 365 Account by following these instructions :'
+                    : 'Login menggunakan Akun Microsoft Office 365 dengan mengikuti petunjuk berikut :',
+                style: const TextStyle(fontSize: 13, height: 1.5),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                isEnglish
+                    ? 'Username (iGracias Account) added with "@365.telkomuniversity.ac.id"\nPassword (iGracias Account) in the Password field.'
+                    : 'Username (Akun iGracias) ditambahkan "@365.telkomuniversity.ac.id"\nPassword (Akun iGracias) pada kolom Password.',
+                style: const TextStyle(
+                    fontSize: 13, height: 1.5, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                isEnglish
+                    ? 'Authentication failure is caused by:\nYou have not changed your Password to a "Strong Password".\nPlease ensure you have changed your Password in iGracias.'
+                    : 'Kegagalan yang terjadi pada Autentikasi disebabkan oleh:\nAnda belum mengubah Password Anda menjadi "Strong Password".\nPastikan Anda telah melakukan perubahan Password di iGracias.',
+                style: const TextStyle(fontSize: 13, height: 1.5),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                isEnglish
+                    ? 'For further information, please contact CeLOE Helpdesk Service at :'
+                    : 'Informasi lebih lanjut dapat menghubungi Layanan CeLOE Helpdesk di :',
+                style: const TextStyle(fontSize: 13, height: 1.5),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Mail : infoceloe@telkomuniversity.ac.id\nwhatsapp : +62 821-1666-3563',
+                style:
+                    TextStyle(fontSize: 13, height: 1.5, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
+        );
+      },
     );
   }
 }
