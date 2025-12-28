@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../theme/colors.dart';
+import 'introduction_uid_page.dart'; // Add this import
 
 class MaterialDetailPage extends StatefulWidget {
   const MaterialDetailPage({super.key});
@@ -182,6 +183,11 @@ class _MaterialDetailPageState extends State<MaterialDetailPage> with SingleTick
                   );
                 }
               }
+            } else if (item['title'] == 'Pengantar User Interface Design') {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const IntroductionUIDPage()),
+              );
             }
           },
           child: Container(
