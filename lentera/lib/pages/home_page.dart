@@ -7,6 +7,7 @@ import 'course_page.dart';
 import 'assignment_detail_page.dart';
 import 'profile_page.dart';
 import 'notification_page.dart';
+import 'announcement_detail_page.dart'; // Add this import
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -178,22 +179,30 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          Container(
-            height: 150,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.blue[50],
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.blue[100]!),
-            ),
-            child: const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.campaign, size: 40, color: Colors.blue),
-                  SizedBox(height: 8),
-                  Text('Info Maintenance Server'),
-                ],
+          InkWell(
+            onTap: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AnnouncementDetailPage()),
+              );
+            },
+            child: Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.blue[50],
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.blue[100]!),
+              ),
+              child: const Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.campaign, size: 40, color: Colors.blue),
+                    SizedBox(height: 8),
+                    Text('Info Maintenance Server'),
+                  ],
+                ),
               ),
             ),
           ),
