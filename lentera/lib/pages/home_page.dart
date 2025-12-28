@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/course_model.dart';
 import '../theme/colors.dart';
 import '../widgets/course_card.dart';
+import 'course_detail_page.dart';
+import 'course_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,34 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  // Dummy Data
-  final List<Course> _courses = [
-    Course(
-      title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
-      code: 'UIUX-01',
-      progress: 0.75,
-      color: Colors.orange,
-    ),
-    Course(
-      title: 'PEMROGRAMAN MOBILE LANJUT',
-      code: 'MOB-02',
-      progress: 0.45,
-      color: Colors.blue,
-    ),
-    Course(
-      title: 'SISTEM OPERASI',
-      code: 'OS-03',
-      progress: 0.90,
-      color: Colors.red,
-    ),
-    Course(
-      title: 'BASIS DATA II',
-      code: 'BD-04',
-      progress: 0.20,
-      color: Colors.purple,
-    ),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -49,10 +23,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Only showing Dashboard for Home tab for now
+    // Pages for Bottom Nav
     final List<Widget> pages = [
       _buildDashboard(context),
-      const Center(child: Text('Course Page Placeholder')),
+      const CoursePage(),
       const Center(child: Text('Profile Page Placeholder')),
     ];
 
@@ -99,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             )
-          : null, // No AppBar for other tabs or custom one
+          : null, // Let sub-pages handle AppBar if needed (CoursePage has one)
       body: pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -125,6 +99,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildDashboard(BuildContext context) {
+    // Only showing a few recent courses on Dashboard
+    final recentCourses = Course.dummyCourses.take(5).toList();
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20.0),
       child: Column(
@@ -217,9 +194,20 @@ class _HomePageState extends State<HomePage> {
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: _courses.length,
+            itemCount: recentCourses.length,
             itemBuilder: (context, index) {
-              return CourseCard(course: _courses[index]);
+              final course = recentCourses[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CourseDetailPage(course: course),
+                    ),
+                  );
+                },
+                child: CourseCard(course: course),
+              );
             },
           ),
         ],
