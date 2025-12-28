@@ -30,8 +30,9 @@ class LenteraApp extends StatelessWidget {
           centerTitle: true,
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedItemColor: AppColors.primary,
-          unselectedItemColor: Colors.grey,
+          backgroundColor: AppColors.primary,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.white70,
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
         ),

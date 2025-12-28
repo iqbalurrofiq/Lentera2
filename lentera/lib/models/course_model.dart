@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class Course {
   final String title;
   final String code;
+  final String semester;
   final double progress; // 0.0 to 1.0
   final Color color;
 
   Course({
     required this.title,
     required this.code,
+    required this.semester,
     required this.progress,
     required this.color,
   });
@@ -16,33 +18,52 @@ class Course {
   static List<Course> get dummyCourses => [
         Course(
           title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
-          code: 'UIUX-01',
-          progress: 0.75,
-          color: const Color(0xFFE57373), // Red-ish
+          code: 'D4SM-42-03 [ADY]',
+          semester: '2021/2',
+          progress: 0.89,
+          color: const Color(0xFFFDD835), // Yellow-ish
         ),
         Course(
-          title: 'PEMROGRAMAN MOBILE LANJUT',
-          code: 'MOB-02',
-          progress: 0.45,
-          color: const Color(0xFF64B5F6), // Blue-ish
+          title: 'KEWARGANEGARAAN',
+          code: 'D4SM-41-GAB1 [BBO]. JUMAT 2',
+          semester: '2021/2',
+          progress: 0.86,
+          color: const Color(0xFFD50000), // Red
         ),
         Course(
           title: 'SISTEM OPERASI',
-          code: 'OS-03',
+          code: 'D4SM-44-02 [DDS]',
+          semester: '2021/2',
           progress: 0.90,
-          color: const Color(0xFFFFD54F), // Yellow-ish
+          color: const Color(0xFFEEEEEE), // Grey/White pattern
         ),
         Course(
-          title: 'BASIS DATA II',
-          code: 'BD-04',
-          progress: 0.20,
-          color: const Color(0xFFBA68C8), // Purple-ish
+          title: 'PEMROGRAMAN PERANGKAT BERGERAK MULTIMEDIA',
+          code: 'D4SM-41-GAB1 [APJ]',
+          semester: '2021/2',
+          progress: 0.90,
+          color: const Color(0xFF80DEEA), // Cyan
         ),
         Course(
-           title: 'KEWARGANEGARAAN',
-           code: 'KWN-05',
-           progress: 0.10,
-           color: const Color(0xFF81C784), // Green-ish
+           title: 'BAHASA INGGRIS: BUSINESS AND SCIENTIFIC',
+           code: 'D4SM-41-GAB1 [ARS]',
+           semester: '2021/2',
+           progress: 0.80,
+           color: const Color(0xFFE0E0E0), // Grey
+        ),
+         Course(
+           title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
+           code: 'D4SM-43-04 [TPR]',
+           semester: '2021/2',
+           progress: 0.90,
+           color: const Color(0xFF1976D2), // Blue
+        ),
+         Course(
+           title: 'OLAH RAGA',
+           code: 'D3TT-44-02 [EYR]',
+           semester: '2021/2',
+           progress: 0.90,
+           color: const Color(0xFFB39DDB), // Purple
         ),
       ];
 }
