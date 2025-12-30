@@ -18,7 +18,7 @@ class QuizDetailPage extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: AppColors.primary,
+        backgroundColor: const Color(0xFFC62828), // Red Color
         foregroundColor: Colors.white,
         elevation: 0,
       ),
@@ -44,7 +44,7 @@ class QuizDetailPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
+                   Text(
                     'Kuis Akan di tutup pada ${quiz.deadline}',
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontWeight: FontWeight.bold),
@@ -69,44 +69,78 @@ class QuizDetailPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: const BoxDecoration(
-                color: Color(0xFFE57373), // Lighter red
+                color: Color(0xFFEF5350), // Lighter red
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(8),
                   topRight: Radius.circular(8),
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('Status', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text('Nilai / 100.00', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  Text('Tinjau Kembali', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              child: const Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Text('Status',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Text('Nilai / 100.00',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Text('Tinjau Kembali',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.right),
+                  ),
                 ],
               ),
             ),
             
             // History Item (Dummy)
             Container(
-               padding: const EdgeInsets.all(16),
-               color: Colors.grey[50],
-               child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       const Text('Selesai', style: TextStyle(fontWeight: FontWeight.bold)),
-                       const SizedBox(height: 4),
-                       Text(
-                         'Dikirim Pada Kamis, 25 Februari 2021, 10:40',
-                         style: TextStyle(fontSize: 10, color: Colors.grey[600]),
-                       ),
-                     ],
-                   ),
-                   const Text('85,0', style: TextStyle(fontWeight: FontWeight.bold)),
-                   const Text('Lihat', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
-                 ],
-               ),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              decoration: BoxDecoration(
+                 color: Colors.grey[50],
+                 border: Border.all(color: Colors.grey[300]!),
+                 borderRadius: const BorderRadius.only(
+                   bottomLeft: Radius.circular(8),
+                   bottomRight: Radius.circular(8),
+                 ),
+              ),
+              child: Row(
+                children: [
+                   const Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Selesai', style: TextStyle(fontWeight: FontWeight.bold)),
+                         SizedBox(height: 4),
+                        Text('Dikirim Pada Kamis, 25 Februari 2021, 10:40', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
+                  ),
+                   const Expanded(
+                    flex: 1,
+                    child: Text('85,0', style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                  ),
+                   Expanded(
+                    flex: 1,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text('Lihat', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
              const SizedBox(height: 24),
             
@@ -114,7 +148,8 @@ class QuizDetailPage extends StatelessWidget {
              const Center(
                child: Text(
                  'Nilai Akhir Anda Unutuk Kuis Ini Adalah 85.0 / 100.00',
-                 style: TextStyle(fontWeight: FontWeight.bold),
+                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                 textAlign: TextAlign.center,
                ),
              ),
              
@@ -134,18 +169,18 @@ class QuizDetailPage extends StatelessWidget {
                          );
                        },
                        style: ElevatedButton.styleFrom(
-                         backgroundColor: Colors.grey[200],
+                         backgroundColor: Colors.grey[100],
                          foregroundColor: Colors.black,
                          elevation: 0,
                          shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(30),
+                           borderRadius: BorderRadius.circular(8),
                          ),
                          padding: const EdgeInsets.symmetric(vertical: 16),
                        ),
                        child: const Text('Ambil Kuis'),
                      ),
                    ),
-                   const SizedBox(height: 16),
+                   const SizedBox(height: 12),
                    SizedBox(
                      width: 200,
                      child: ElevatedButton(
@@ -153,11 +188,11 @@ class QuizDetailPage extends StatelessWidget {
                          Navigator.pop(context);
                        },
                        style: ElevatedButton.styleFrom(
-                         backgroundColor: Colors.grey[200],
+                         backgroundColor: Colors.grey[100],
                          foregroundColor: Colors.black,
                          elevation: 0,
                            shape: RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(30),
+                           borderRadius: BorderRadius.circular(8),
                          ),
                          padding: const EdgeInsets.symmetric(vertical: 16),
                        ),

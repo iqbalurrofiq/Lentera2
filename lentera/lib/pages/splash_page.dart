@@ -36,10 +36,11 @@ class _SplashPageState extends State<SplashPage> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Lentera',
+              'LENTERA',
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                     color: AppColors.white,
                     fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
                   ),
             ),
           ],
