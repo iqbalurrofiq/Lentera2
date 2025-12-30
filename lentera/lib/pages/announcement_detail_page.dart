@@ -25,7 +25,7 @@ class AnnouncementDetailPage extends StatelessWidget {
           children: [
             // Title
             const Text(
-              'Maintenance Pra UAS Semester Genap 2020/2021',
+              'Maintenance Pra UAS Semester Genap 2025/2026',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class AnnouncementDetailPage extends StatelessWidget {
                 const SizedBox(width: 8),
                 const Expanded(
                   child: Text(
-                    'By Admin Celoe - Rabu, 2 Juni 2021, 10:45',
+                    'By Admin Celoe - Selasa, 30 Desember 2025, 10:45',
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
                 ),
@@ -110,7 +110,7 @@ class AnnouncementDetailPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Diinformasikan kepada seluruh pengguna LMS, kami dari tim CeLOE akan melakukan maintenance pada tanggal 12 Juni 2021, untuk meningkatkan layanan server dalam menghadapi ujian akhir semester (UAS).',
+              'Diinformasikan kepada seluruh pengguna LMS, kami dari tim CeLOE akan melakukan maintenance pada tanggal 30 Desember 2025, untuk meningkatkan layanan server dalam menghadapi ujian akhir semester (UAS).',
               style: TextStyle(fontSize: 14, height: 1.6),
               textAlign: TextAlign.justify,
             ),

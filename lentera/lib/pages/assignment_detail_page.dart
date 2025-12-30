@@ -30,7 +30,7 @@ class AssignmentDetailPage extends StatelessWidget {
               '3. Desain bisa dibuat menggunakan aplikasi khusus desain atau secara manual dengan tetap menjunjung kerapihan dan kejelasan setiap elemen dalam desain.\n\n'
               '4. Berikan identitas aplikasi game yang dibuat, seperti Nama Game, Genre, dan Platform. Serta berikan penjelasan pada setiap elemen pada desain, seperti gambar, teks, tombol, icon, dan lain-lain.\n\n'
               '5. File dikumpulkan dalam format .PDF dengan size maksimal 5MB.\n\n'
-              '6. Tugas dikumpulkan paling lambat hari Jum\'at, 26 Februari 2021 jam 23.59 WIB (akan tertutup otomatis) dan akan dipresentasikan pada pertemuan selanjutnya via Zoom Meeting.',
+              '6. Tugas dikumpulkan paling lambat hari Selasa, 30 Desember 2025 jam 23.59 WIB (akan tertutup otomatis) dan akan dipresentasikan pada pertemuan selanjutnya via Zoom Meeting.',
               style: TextStyle(height: 1.5, fontSize: 13),
             ),
             const SizedBox(height: 32),
@@ -67,7 +67,7 @@ class AssignmentDetailPage extends StatelessWidget {
                   const Divider(height: 1),
                   _buildStatusRow('Status Nilai', 'Belum Di Nilai'),
                   const Divider(height: 1),
-                  _buildStatusRow('Batas tanggal', 'Jumat, 26 Februari 2021, 23:59 WIB'),
+                  _buildStatusRow('Batas tanggal', 'Selasa, 30 Desember 2025, 23:59 WIB'),
                   const Divider(height: 1),
                   _buildStatusRow('Sisa Waktu', 'Tugas sudah di kirim 4 Hari 6 Jam Sebelum nya'),
                   const Divider(height: 1),

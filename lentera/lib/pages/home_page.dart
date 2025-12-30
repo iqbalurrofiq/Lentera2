@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(fontSize: 14, color: Colors.white70),
                           ),
                           Text(
-                            'DANDY CANDRA PRATAMA',
+                            'IQBALUR ROFIQ',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: 16,
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                   Align(
                     alignment: Alignment.bottomRight,
                     child: Text(
-                      'Waktu Pengumpulan\nJumat 20 Februari 23:59 WIB',
+                      'Waktu Pengumpulan\nSelasa 30 Desember 23:59 WIB',
                       textAlign: TextAlign.right,
                       style: TextStyle(color: Colors.white, fontSize: 12),
                     ),

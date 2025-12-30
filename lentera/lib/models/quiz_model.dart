@@ -28,8 +28,8 @@ class Quiz {
   static Quiz get dummyQuiz => Quiz(
         title: 'Quiz Review 1',
         description:
-            'Silahkan kerjakan kuis ini dalam waktu 15 menit sebagai nilai pertama komponen kuis.\nJangan lupa klik tombol Submit Answer setelah menjawab seluruh pertanyaan.\n\nKerjakan sebelum hari Jum\'at, 26 Februari 2021 jam 23:59 WIB.',
-        deadline: 'Jumat, 26 February 2021, 11:59 PM',
+            'Silahkan kerjakan kuis ini dalam waktu 15 menit sebagai nilai pertama komponen kuis.\nJangan lupa klik tombol Submit Answer setelah menjawab seluruh pertanyaan.\n\nKerjakan sebelum hari Selasa, 30 Desember 2025 jam 23:59 WIB.',
+        deadline: 'Selasa, 30 Desember 2025, 11:59 PM',
         durationMinutes: 15,
       questions: [
         Question(

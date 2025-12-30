@@ -21,7 +21,7 @@ class Course {
         Course(
           title: 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
           code: 'D4SM-42-03 [ADY]',
-          semester: '2021/2',
+          semester: '2025/2',
           progress: 0.89,
           color: const Color(0xFFFDD835),
           coverType: 'ui_ux',
@@ -29,7 +29,7 @@ class Course {
         Course(
           title: 'KEWARGANEGARAAN',
           code: 'D4SM-41-GAB1 [BBO]. JUMAT 2',
-          semester: '2021/2',
+          semester: '2025/2',
           progress: 0.86,
           color: const Color(0xFFD50000),
           coverType: 'pkn',
@@ -37,7 +37,7 @@ class Course {
         Course(
           title: 'SISTEM OPERASI',
           code: 'D4SM-44-02 [DDS]',
-          semester: '2021/2',
+          semester: '2025/2',
           progress: 0.90,
           color: const Color(0xFFEEEEEE),
           coverType: 'os',
@@ -45,7 +45,7 @@ class Course {
         Course(
           title: 'PEMROGRAMAN PERANGKAT BERGERAK MULTIMEDIA',
           code: 'D4SM-41-GAB1 [APJ]',
-          semester: '2021/2',
+          semester: '2025/2',
           progress: 0.90,
           color: const Color(0xFF80DEEA),
           coverType: 'code',
@@ -53,7 +53,7 @@ class Course {
         Course(
           title: 'BAHASA INGGRIS: BUSINESS AND SCIENTIFIC',
           code: 'D4SM-41-GAB1 [ARS]',
-          semester: '2021/2',
+          semester: '2025/2',
           progress: 0.80,
           color: const Color(0xFFE0E0E0),
           coverType: 'english',
@@ -61,7 +61,7 @@ class Course {
          Course(
            title: 'PEMROGRAMAN MULTIMEDIA INTERAKTIF',
            code: 'D4SM-43-04 [TPR]',
-           semester: '2021/2',
+           semester: '2025/2',
            progress: 0.90,
            color: const Color(0xFF1976D2),
            coverType: 'multimedia',
@@ -69,7 +69,7 @@ class Course {
          Course(
            title: 'OLAH RAGA',
            code: 'D3TT-44-02 [EYR]',
-           semester: '2021/2',
+           semester: '2025/2',
            progress: 0.90,
            color: const Color(0xFFB39DDB),
            coverType: 'sports',

@@ -121,7 +121,7 @@ class QuizDetailPage extends StatelessWidget {
                       children: [
                         Text('Selesai', style: TextStyle(fontWeight: FontWeight.bold)),
                          SizedBox(height: 4),
-                        Text('Dikirim Pada Kamis, 25 Februari 2021, 10:40', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                        Text('Dikirim Pada Selasa, 30 Desember 2025, 10:40', style: TextStyle(fontSize: 12, color: Colors.grey)),
                       ],
                     ),
                   ),

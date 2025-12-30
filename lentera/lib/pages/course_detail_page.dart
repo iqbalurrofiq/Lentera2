@@ -205,21 +205,21 @@ class _CourseDetailPageState extends State<CourseDetailPage> with SingleTickerPr
         'type': 'quiz',
         'label': 'QUIZ',
         'title': 'Quiz Review 01',
-        'deadline': 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        'deadline': 'Tenggat Waktu : 30 Desember 2025 23:59 WIB',
         'done': true,
       },
       {
         'type': 'tugas',
         'label': 'Tugas',
         'title': 'Tugas 01 - UID Android Mobile Game',
-        'deadline': 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        'deadline': 'Tenggat Waktu : 30 Desember 2025 23:59 WIB',
         'done': false, // Grey check
       },
       {
         'type': 'quiz',
         'label': 'Pertemuan 3',
         'title': 'Kuis - Assessment 2',
-        'deadline': 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        'deadline': 'Tenggat Waktu : 30 Desember 2025 23:59 WIB',
         'done': true,
       },
     ];

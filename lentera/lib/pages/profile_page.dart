@@ -76,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                        ),
                        const SizedBox(height: 16),
                        const Text(
-                         'DANDY CANDRA PRATAMA',
+                         'IQBALUR ROFIQ',
                          style: TextStyle(
                            color: Colors.white,
                            fontSize: 16,
@@ -172,7 +172,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
           const SizedBox(height: 16),
-          _buildInfoItem('Email address', 'dandycandra@365.telkomuniversity.ac.id'),
+          _buildInfoItem('Email address', 'iqbalurrofiq@365.telkomuniversity.ac.id'),
           const SizedBox(height: 16),
           _buildInfoItem('Program Studi', 'D4 Teknologi Rekayasa Multimedia'),
            const SizedBox(height: 16),
@@ -184,9 +184,9 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
           const SizedBox(height: 16),
-          _buildInfoItem('First access to site', 'Monday, 7 September 2020, 9:27 AM (288 days 12 hours)'),
+          _buildInfoItem('First access to site', 'Tuesday, 30 December 2025, 08:00 AM (14 hours)'),
           const SizedBox(height: 16),
-          _buildInfoItem('Last access to site', 'Tuesday, 22 June 2021, 9:44 PM (now)'),
+          _buildInfoItem('Last access to site', 'Tuesday, 30 December 2025, 10:35 PM (now)'),
 
           const SizedBox(height: 40),
           

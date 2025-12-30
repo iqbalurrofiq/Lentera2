@@ -16,15 +16,12 @@ class LoginPage extends StatelessWidget {
             // Top Section (Header Image Placeholder)
             ClipPath(
               clipper: LoginHeaderClipper(),
-              child: Container(
+              child: SizedBox(
                 height: 300,
                 width: double.infinity,
-                color: Colors.grey[300], // Placeholder color
-                child: Center(
-                  child: Text(
-                    'Building Image Placeholder',
-                    style: TextStyle(color: Colors.grey[600]),
-                  ),
+                child: Image.asset(
+                  'assets/images/building_image.png',
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -88,7 +85,7 @@ class LoginPage extends StatelessWidget {
                     // Email Input
                     TextField(
                       decoration: const InputDecoration(
-                        labelText: 'Email 365',
+                        labelText: 'Email',
                         border: UnderlineInputBorder(),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: AppColors.primary, width: 2),

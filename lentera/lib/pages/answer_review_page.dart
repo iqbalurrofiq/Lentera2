@@ -48,11 +48,11 @@ class AnswerReviewPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  _buildSummaryRow('Di Mulai Pada', 'Kamis 25 Februari 2021 10:25'),
+                  _buildSummaryRow('Di Mulai Pada', 'Selasa 30 Desember 2025 10:25'),
                   const SizedBox(height: 12),
                   _buildSummaryRow('Status', 'Selesai'),
                   const SizedBox(height: 12),
-                  _buildSummaryRow('Selesai Pada', 'Kamis 25 Februari 2021 10:40'),
+                  _buildSummaryRow('Selesai Pada', 'Selasa 30 Desember 2025 10:40'),
                   const SizedBox(height: 12),
                   _buildSummaryRow('Waktu Penyelesaian', '13 Menit 22 Detik'),
                   const SizedBox(height: 12),
